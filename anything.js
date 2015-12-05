@@ -67,7 +67,19 @@
     //Just in case you need to check if something equals 5...
     var isNumber5 = function(num)
     {
-      return num == 5;
+      if (num == 5) return true
+      return false
+    }
+
+    // The categorical dual of `isNumber5`
+    //     reference: https://en.wikipedia.org/wiki/Dual_%28category_theory%29
+    var coIsNumber5 = function(b)
+    {
+      if (b == true){
+      	return 5;
+      } else {
+      	return undefined;
+      }
     }
 
     var addRealFunctionalityOnTheFly = function () {
@@ -118,14 +130,6 @@
         }
     }();
 
-    //Return true if today is Christmas
-    var isChristmas = function()
-    {
-        var today = new(Date);
-        // Months are 0 indexed
-        return (today.getMonth() == 11 && today.getDate() == 25);
-    }
-
 
     //prototypes go here
     anything.prototype.doTheThing = doTheThing;
@@ -138,13 +142,13 @@
     anything.prototype.self = self;
     anything.prototype.Δ = Δ;
     anything.prototype.isNumber5 = isNumber5;
+    anything.prototype.coIsNumber5 = coIsNumber5;
     anything.prototype.addRealFunctionalityOnTheFly = addRealFunctionalityOnTheFly;
     anything.prototype.getRandomNumber = getRandomNumber;
     anything.prototype.everything = everything;
     anything.prototype.twoString = twoString;
     anything.prototype.fizzbuzz = fizzbuzz;
     anything.prototype.generateUniqueColorHue = generateUniqueColorHue;
-    anything.prototype.isChristmas = isChristmas;
 
     //put that shit where everyone can see it.
     if(typeof(window.Δ) === 'undefined'){
